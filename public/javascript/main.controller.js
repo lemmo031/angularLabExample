@@ -21,9 +21,9 @@ var mainApp = angular.module("mainApp", []);
        // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
        $scope.data = [
            {text: "fish"},
-           {text: "kittens"},
+           {text: "fuzzy kittens"},
            {text: "snake"},
-           {text: "badger"},
+           {text: "honey badger"},
            {text: "puppies"}
        ];
 
