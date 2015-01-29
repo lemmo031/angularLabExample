@@ -55,7 +55,9 @@ var mainApp = angular.module("mainApp", []);
 mainApp.controller('gpaCtrl', function($scope){
     console.log("controller loaded!");
 
-    $scope.textField = "";
+    $scope.courseField = "";
+    $scope.creditField = "";
+    $scope.gradeField = "";
 
     $scope.data = [
     ];
