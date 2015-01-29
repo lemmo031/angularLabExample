@@ -8,6 +8,7 @@ var mainApp = angular.module("mainApp", []);
             {text: "Home", link: '/'},
             {text: "About", link: '/about'},
             {text: "Kittens", link: '/kittens'},
+            {text: "Birds", link: '/birds'},
             {text: "404 Page", link: '/wefwrtbertbeb'}
         ];
     });
