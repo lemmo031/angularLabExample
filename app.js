@@ -48,6 +48,10 @@ app.get('/birds', function(req, res){
     res.sendFile('public/views/birds.html', options);
 });
 
+app.get('/gpaCalculator', function(req, res){
+    res.sendFile('public/views/gpaCalculator.html', options);
+});
+
 // Wildcard catches requests for non-existent routes or files and responds with a 404 message (or an html page if you want to make a custom one!)
 app.get('*', function(req, res){
     //res.send("404");
