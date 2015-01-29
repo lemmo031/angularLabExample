@@ -58,6 +58,7 @@ mainApp.controller('gpaCtrl', function($scope){
     $scope.courseField = "";
     $scope.creditField = "";
     $scope.gradeField = "";
+    $scope.output = "yolo";
 
     $scope.data = [
     ];
@@ -80,7 +81,4 @@ mainApp.controller('gpaCtrl', function($scope){
         return str1 + str2;
     };
 
-    $scope.itemsInList = function(){
-        return $scope.data.length;
-    };
 });
