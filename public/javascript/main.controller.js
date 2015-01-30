@@ -67,10 +67,22 @@ mainApp.controller('gpaCtrl', function($scope){
         // validate user input
         // if it's good, continue to calculate stuff
 
-        //if($scope.textField.length >= 1) {
-        //    $scope.data.push({text: $scope.textField});
-        //    $scope.textField = "";
-        //}
+        if($scope.courseField.length >= 1) {
+            $scope.data.push({text: $scope.courseField});
+            $scope.courseField = "";
+        }
+
+        if($scope.creditField.length >= 1) {
+            $scope.data.push({text: $scope.creditField});
+            $scope.creditField = "";
+        }
+
+        if($scope.gradeField.length >= 1) {
+            $scope.data.push({text: $scope.gradeField});
+            $scope.gradeField = "";
+        }
+
+
     };
 
     $scope.removeData = function(index){
