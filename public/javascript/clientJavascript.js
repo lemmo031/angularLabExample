@@ -35,8 +35,31 @@ var returnKittens = function(){
  * @param number - the number to check
  * @returns {boolean} - true or false
  */
-var isNonNegative = function(number) {
-    return number >= 0;
+var isPositive = function(number){
+    return number > 0;
 }
 
+/**
+ * Used to test if an inputted grade is a valid one
+ *
+ * @param grade - the grade to check
+ * @returns {boolean} - true or false
+ */
+var isValidGrade = function(grade){
+    switch (grade) {
+        case "A":
+        case "a":
+        case "B":
+        case "b":
+        case "C":
+        case "c":
+        case "D":
+        case "d":
+        case "F":
+        case "f":
+            return true;
+        default:
+            return false;
+    }
+}
 

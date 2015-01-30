@@ -68,8 +68,10 @@ mainApp.controller('gpaCtrl', function($scope){
         // if it's good, continue to calculate stuff
         // don't accept negative or zero credits
         // make sure only valid grades are input
+        // warn user if input is bad
+        // convert user input for letter grade to uppercase
 
-        if($scope.courseField.length >= 1 && $scope.gradeField.length >= 1) {
+        if($scope.courseField.length >= 1 && isPositive($scope.creditField) && isValidGrade($scope.gradeField)){
             $scope.data.push({course: $scope.courseField, credit: $scope.creditField, grade: $scope.gradeField});
             $scope.courseField = "";
             $scope.creditField = "";
