@@ -29,3 +29,14 @@ var returnKittens = function(){
     return "kittens";
 };
 
+/**
+ * Used to test if a number is non-negative
+ *
+ * @param number - the number to check
+ * @returns {boolean} - true or false
+ */
+var isNonNegative = function(number) {
+    return number >= 0;
+}
+
+

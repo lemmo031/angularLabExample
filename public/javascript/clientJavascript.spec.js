@@ -11,3 +11,15 @@ describe('testing basic functions', function(){
 
 });
 
+describe('testing user input validation', function(){
+    it('should check if it is a valid amount of credits', function(){
+        expect(isNonNegative(3)).toBe(true);
+        expect(isNonNegative(0)).toBe(true);
+        expect(isNonNegative(-1)).toBe(false);
+        expect(isNonNegative(-2)).toBe(false);
+    });
+
+
+
+});
+
