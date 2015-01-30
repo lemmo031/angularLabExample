@@ -58,6 +58,8 @@ mainApp.controller('gpaCtrl', function($scope){
     $scope.courseField = "";
     $scope.creditField = "";
     $scope.gradeField = "";
+    $scope.pointsEarned = 0;
+    $scope.totalCredits = 0;
     $scope.output = "yolo";
 
     $scope.data = [
@@ -75,6 +77,9 @@ mainApp.controller('gpaCtrl', function($scope){
         } else {
             $scope.gradeField = $scope.gradeField.toUpperCase();
             $scope.data.push({course: $scope.courseField, credit: $scope.creditField, grade: $scope.gradeField});
+            $scope.pointsEarned += letterToNum($scope.gradeField) * $scope.creditField;
+            $scope.totalCredits += $scope.creditField;
+            $scope.output = calculateGPA($scope.pointsEarned, $scope.totalCredits);
             $scope.courseField = "";
             $scope.creditField = "";
             $scope.gradeField = "";

@@ -83,3 +83,14 @@ var letterToNum = function(letter){
     }
 }
 
+/**
+ * Divides the pointsEarned by the totalCredits to get the GPA.
+ * @param pointsEarned
+ * @param totalCredits
+ * @returns {number}
+ */
+var calculateGPA = function(pointsEarned, totalCredits){
+    return pointsEarned/totalCredits;
+}
+
+
