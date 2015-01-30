@@ -37,7 +37,7 @@
                 </form>
 
             </li>
-            <li class="list-group-item" ng-repeat="test in data">{{test.text}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
+            <li class="list-group-item" ng-repeat="record in data">Class: {{record.course}} Credits: {{record.credit}} Grade: {{record.grade}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
         </ul>
     </div>
 </body>
