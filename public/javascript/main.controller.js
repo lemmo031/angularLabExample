@@ -66,8 +66,10 @@ mainApp.controller('gpaCtrl', function($scope){
     $scope.addData = function(){
         // validate user input
         // if it's good, continue to calculate stuff
+        // don't accept negative or zero credits
+        // make sure only valid grades are input
 
-        if($scope.courseField.length >= 1 && $scope.creditField.length >= 1 && $scope.gradeField.length >= 1) {
+        if($scope.courseField.length >= 1 && $scope.gradeField.length >= 1) {
             $scope.data.push({course: $scope.courseField, credit: $scope.creditField, grade: $scope.gradeField});
             $scope.courseField = "";
             $scope.creditField = "";
