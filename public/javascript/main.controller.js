@@ -64,14 +64,16 @@ mainApp.controller('gpaCtrl', function($scope){
     ];
 
     $scope.addData = function(){
-        // validate user input
-        // if it's good, continue to calculate stuff
-        // don't accept negative or zero credits
-        // make sure only valid grades are input
-        // warn user if input is bad
-        // convert user input for letter grade to uppercase
+        // implement the GPA calculator
 
-        if($scope.courseField.length >= 1 && isPositive($scope.creditField) && isValidGrade($scope.gradeField)){
+        if($scope.courseField.length == 0){
+            alert("Please enter a class name.");
+        } else if (!isPositive($scope.creditField)){
+            alert("Credits must be greater than 0.");
+        } else if (!isValidGrade($scope.gradeField)){
+            alert("Please enter a valid letter grade (A-F).");
+        } else {
+            $scope.gradeField = $scope.gradeField.toUpperCase();
             $scope.data.push({course: $scope.courseField, credit: $scope.creditField, grade: $scope.gradeField});
             $scope.courseField = "";
             $scope.creditField = "";
