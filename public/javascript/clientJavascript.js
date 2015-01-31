@@ -90,6 +90,10 @@ var letterToNum = function(letter){
  * @returns {number}
  */
 var calculateGPA = function(pointsEarned, totalCredits){
+    if (totalCredits == 0){
+        return 0;
+    }
+
     return pointsEarned/totalCredits;
 }
 

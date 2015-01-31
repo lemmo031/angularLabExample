@@ -60,7 +60,7 @@ mainApp.controller('gpaCtrl', function($scope){
     $scope.gradeField = "";
     $scope.pointsEarned = 0;
     $scope.totalCredits = 0;
-    $scope.output = "yolo";
+    $scope.output = "GPA: 0";
 
     $scope.data = [
     ];
@@ -77,32 +77,23 @@ mainApp.controller('gpaCtrl', function($scope){
         } else {
             $scope.gradeField = $scope.gradeField.toUpperCase();
             $scope.data.push({course: $scope.courseField, credit: $scope.creditField, grade: $scope.gradeField});
-            $scope.pointsEarned += letterToNum($scope.gradeField) * $scope.creditField;
-            $scope.totalCredits += $scope.creditField;
-            $scope.output = calculateGPA($scope.pointsEarned, $scope.totalCredits);
+            $scope.updateGPA(letterToNum($scope.gradeField) * $scope.creditField, $scope.creditField)
             $scope.courseField = "";
             $scope.creditField = "";
             $scope.gradeField = "";
         }
-        //if($scope.courseField.length >= 1) {
-        //    $scope.data.push({text: $scope.courseField});
-        //    $scope.courseField = "";
-        //}
-        //
-        //if($scope.creditField.length >= 1) {
-        //    $scope.data.push({text: $scope.creditField});
-        //    $scope.creditField = "";
-        //}
-        //
-        //if($scope.gradeField.length >= 1) {
-        //    $scope.data.push({text: $scope.gradeField});
-        //    $scope.gradeField = "";
-        //}
+    };
 
-
+    $scope.updateGPA = function(changeInPoints, changeInCredits){
+        $scope.pointsEarned += changeInPoints;
+        $scope.totalCredits += changeInCredits;
+        $scope.output = "GPA: " + calculateGPA($scope.pointsEarned, $scope.totalCredits);
     };
 
     $scope.removeData = function(index){
+        var credits = $scope.data[index].credit;
+        var grade = $scope.data[index].grade;
+        $scope.updateGPA(-1 * letterToNum(grade) * credits, -1 * credits);
         $scope.data.splice(index, 1);
     };
 
