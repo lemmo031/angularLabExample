@@ -60,7 +60,7 @@ mainApp.controller('gpaCtrl', function($scope){
     $scope.gradeField = "";
     $scope.pointsEarned = 0;
     $scope.totalCredits = 0;
-    $scope.output = "GPA: 0";
+    $scope.output = 0;
 
     $scope.data = [
     ];
@@ -87,7 +87,7 @@ mainApp.controller('gpaCtrl', function($scope){
     $scope.updateGPA = function(changeInPoints, changeInCredits){
         $scope.pointsEarned += changeInPoints;
         $scope.totalCredits += changeInCredits;
-        $scope.output = "GPA: " + calculateGPA($scope.pointsEarned, $scope.totalCredits);
+        $scope.output = calculateGPA($scope.pointsEarned, $scope.totalCredits);
     };
 
     $scope.removeData = function(index){
@@ -102,17 +102,15 @@ mainApp.controller('gpaCtrl', function($scope){
     };
 
     $scope.getColorClass = function(GPA){
-        output = "";
         if (GPA >= 3.0){
-            output = "bg-success";
+            return "bg-success";
         }
         else if (GPA >= 2.0){
-            output = "bg-warning";
+            return "bg-warning";
         }
         else{
-            output = "bg-danger";
+            return "bg-danger";
         }
-        return output;
     };
 
 });
