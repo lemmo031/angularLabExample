@@ -103,13 +103,13 @@ mainApp.controller('gpaCtrl', function($scope){
 
     $scope.getColorClass = function(GPA){
         if (GPA >= 3.0){
-            return "bg-success";
+            return "good";
         }
         else if (GPA >= 2.0){
-            return "bg-warning";
+            return "bad";
         }
         else{
-            return "bg-danger";
+            return "ugly";
         }
     };
 

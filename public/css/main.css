@@ -23,3 +23,15 @@ img {
 .floatRight {
     float: right;
 }
+
+.good {
+    background: green;
+}
+
+.bad {
+    background: yellow;
+}
+
+.ugly {
+    background: red;
+}

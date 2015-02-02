@@ -81,21 +81,21 @@ describe('Testing getColorClass', function(){
         });
     }));
 
-    it('scores of 3.0 or above should return bg-success', function(){
-        expect(scope.getColorClass(4.0)).toEqual("bg-success");
-        expect(scope.getColorClass(3.4)).toEqual("bg-success");
-        expect(scope.getColorClass(3.0)).toEqual("bg-success");
+    it('scores of 3.0 or above should return good', function(){
+        expect(scope.getColorClass(4.0)).toEqual("good");
+        expect(scope.getColorClass(3.4)).toEqual("good");
+        expect(scope.getColorClass(3.0)).toEqual("good");
     });
 
-    it('scores between 2.0 inclusive and 3.0 exclusive should return bg-warning', function(){
-        expect(scope.getColorClass(2.9)).toEqual("bg-warning");
-        expect(scope.getColorClass(2.5)).toEqual("bg-warning");
-        expect(scope.getColorClass(2.0)).toEqual("bg-warning");
+    it('scores between 2.0 inclusive and 3.0 exclusive should return bad', function(){
+        expect(scope.getColorClass(2.9)).toEqual("bad");
+        expect(scope.getColorClass(2.5)).toEqual("bad");
+        expect(scope.getColorClass(2.0)).toEqual("bad");
     });
 
-    it('scores below 2.0 should return bg-danger', function(){
-        expect(scope.getColorClass(1.9)).toEqual("bg-danger");
-        expect(scope.getColorClass(1.0)).toEqual("bg-danger");
-        expect(scope.getColorClass(0)).toEqual("bg-danger");
+    it('scores below 2.0 should return ugly', function(){
+        expect(scope.getColorClass(1.9)).toEqual("ugly");
+        expect(scope.getColorClass(1.0)).toEqual("ugly");
+        expect(scope.getColorClass(0)).toEqual("ugly");
     });
 });
